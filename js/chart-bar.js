@@ -17,7 +17,7 @@ function gerarGraficoBarras(dadosMgil){
       data: {
         labels: grafico_barras_labels,
         datasets: [{
-          label: "Revenue",
+          label: "Suspeitos",
           backgroundColor: "rgba(2,117,216,1)",
           borderColor: "rgba(2,117,216,1)",
           data: grafico_barras_dados,
