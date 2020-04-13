@@ -2,7 +2,7 @@
     (function($) {
 
         //dados
-        d3.csv('https://raw.githubusercontent.com/webalysson/covid19/master/notifications_mgil.csv')
+        d3.csv('https://raw.githubusercontent.com/webalysson/covidmgil/master/dados/notifications_mgil.csv')
         .then(function(data){
             gerarGraficoArea(data);
             gerarGraficoBarras(data);
