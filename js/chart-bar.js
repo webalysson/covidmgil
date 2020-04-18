@@ -39,7 +39,7 @@ function gerarGraficoBarras(dadosMgil){
           yAxes: [{
             ticks: {
               min: 0,
-              max: 20,
+              max: 15,
               maxTicksLimit: 5
             },
             gridLines: {
