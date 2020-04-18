@@ -5,7 +5,7 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 //dados previamente carregados e chamada esta function
 
 function gerarGraficoBarras(dadosMgil){
-    console.log(dadosMgil);
+    //console.log(dadosMgil);
     var grafico_barras_labels = dadosMgil.map(function(d) {return d.Data});
     var grafico_barras_dados = dadosMgil.map(function(d) {return d.Suspeitos});
 
@@ -27,20 +27,20 @@ function gerarGraficoBarras(dadosMgil){
         scales: {
           xAxes: [{
             time: {
-              unit: 'month'
+              unit: 'date'
             },
             gridLines: {
               display: false
             },
             ticks: {
-              maxTicksLimit: 6
+              maxTicksLimit: 8
             }
           }],
           yAxes: [{
             ticks: {
               min: 0,
               max: 15,
-              maxTicksLimit: 5
+              maxTicksLimit: 8
             },
             gridLines: {
               display: true
