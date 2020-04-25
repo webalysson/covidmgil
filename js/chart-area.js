@@ -33,20 +33,20 @@ function gerarGraficoArea(dadosMgil){
       scales: {
         xAxes: [{
           time: {
-            unit: 'date'
+            unit: 'Data'
           },
           gridLines: {
             display: false
           },
           ticks: {
-            maxTicksLimit: 7
+            maxTicksLimit: 10
           }
         }],
         yAxes: [{
           ticks: {
             min: 0,
             max: 15,
-            maxTicksLimit: 5
+            maxTicksLimit: 7
           },
           gridLines: {
             color: "rgba(0, 0, 0, .125)",

@@ -3,54 +3,112 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
 //dados previamente carregados e chamada esta function
+var grafico_barras_labels;
+var dados_suspeitos;
+var dados_descartados;
 
 function gerarGraficoBarras(dadosMgil){
     //console.log(dadosMgil);
-    var grafico_barras_labels = dadosMgil.map(function(d) {return d.Data});
-    var grafico_barras_dados = dadosMgil.map(function(d) {return d.Suspeitos});
+    grafico_barras_labels = dadosMgil.map(function(d) {return d.Data});
+    dados_suspeitos = dadosMgil.map(function(d) {return d.Suspeitos});
+    dados_descartados = dadosMgil.map(function(d) {return d.Descartados});
 
-    // Bar Chart Example
-    var grafico_barras = document.getElementById("grafico_barras");
+    // Bar Chart
+    var div_grafico_suspeitos = document.getElementById("grafico_barras_suspeitos");
+    var div_grafico_descartados = document.getElementById("grafico_barras_descartados");
+    grafico_barras_suspeitos(div_grafico_suspeitos);
+    grafico_barras_descartados(div_grafico_descartados);
 
-    var myLineChart = new Chart(grafico_barras, {
-      type: 'bar',
-      data: {
-        labels: grafico_barras_labels,
-        datasets: [{
-          label: "Suspeitos",
-          backgroundColor: "rgba(2,117,216,1)",
-          borderColor: "rgba(2,117,216,1)",
-          data: grafico_barras_dados,
+}
+
+
+function grafico_barras_suspeitos(div_grafico_suspeitos){
+
+  var myLineChart = new Chart(div_grafico_suspeitos, {
+    type: 'bar',
+    data: {
+      labels: grafico_barras_labels,
+      datasets: [{
+        label: "Suspeitos",
+        backgroundColor: "rgba(2,117,216,1)",
+        borderColor: "rgba(2,117,216,1)",
+        data: dados_suspeitos,
+      }],
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          time: {
+            unit: 'Data'
+          },
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            maxTicksLimit: 10
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            min: 0,
+            max: 15,
+            maxTicksLimit: 7
+          },
+          gridLines: {
+            display: true
+          }
         }],
       },
-      options: {
-        scales: {
-          xAxes: [{
-            time: {
-              unit: 'date'
-            },
-            gridLines: {
-              display: false
-            },
-            ticks: {
-              maxTicksLimit: 8
-            }
-          }],
-          yAxes: [{
-            ticks: {
-              min: 0,
-              max: 15,
-              maxTicksLimit: 8
-            },
-            gridLines: {
-              display: true
-            }
-          }],
-        },
-        legend: {
-          display: false
-        }
+      legend: {
+        display: false
       }
-    });
+    }
+  });
+
+}
+
+
+function grafico_barras_descartados(div_grafico_descartados){
+
+  var myLineChart = new Chart(div_grafico_descartados, {
+    type: 'bar',
+    data: {
+      labels: grafico_barras_labels,
+      datasets: [{
+        label: "Descartados",
+        backgroundColor: "rgba(2,117,216,1)",
+        borderColor: "rgba(2,117,216,1)",
+        data: dados_descartados,
+      }],
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          time: {
+            unit: 'Data'
+          },
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            maxTicksLimit: 10
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            min: 0,
+            max: 15,
+            maxTicksLimit: 7
+          },
+          gridLines: {
+            display: true
+          }
+        }],
+      },
+      legend: {
+        display: false
+      }
+    }
+  });
 
 }
