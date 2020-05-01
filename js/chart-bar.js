@@ -45,7 +45,7 @@ function grafico_barras_suspeitos(div_grafico_suspeitos){
             display: false
           },
           ticks: {
-            maxTicksLimit: 10
+            maxTicksLimit: 20
           }
         }],
         yAxes: [{
@@ -91,7 +91,7 @@ function grafico_barras_descartados(div_grafico_descartados){
             display: false
           },
           ticks: {
-            maxTicksLimit: 10
+            maxTicksLimit: 20
           }
         }],
         yAxes: [{
