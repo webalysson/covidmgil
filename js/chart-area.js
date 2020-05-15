@@ -39,13 +39,13 @@ function gerarGraficoArea(dadosMgil){
             display: false
           },
           ticks: {
-            maxTicksLimit: 20
+            maxTicksLimit: 40
           }
         }],
         yAxes: [{
           ticks: {
             min: 0,
-            max: 25,
+            max: 50,
             maxTicksLimit: 7
           },
           gridLines: {

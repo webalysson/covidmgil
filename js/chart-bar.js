@@ -45,13 +45,13 @@ function grafico_barras_suspeitos(div_grafico_suspeitos){
             display: false
           },
           ticks: {
-            maxTicksLimit: 20
+            maxTicksLimit: 40
           }
         }],
         yAxes: [{
           ticks: {
             min: 0,
-            max: 15,
+            max: 35,
             maxTicksLimit: 7
           },
           gridLines: {
