@@ -97,7 +97,7 @@ function grafico_barras_descartados(div_grafico_descartados){
         yAxes: [{
           ticks: {
             min: 0,
-            max: 15,
+            max: 20,
             maxTicksLimit: 7
           },
           gridLines: {

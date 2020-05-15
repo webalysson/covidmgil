@@ -45,7 +45,7 @@ function gerarGraficoArea(dadosMgil){
         yAxes: [{
           ticks: {
             min: 0,
-            max: 15,
+            max: 25,
             maxTicksLimit: 7
           },
           gridLines: {
