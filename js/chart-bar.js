@@ -51,7 +51,7 @@ function grafico_barras_suspeitos(div_grafico_suspeitos){
         yAxes: [{
           ticks: {
             min: 0,
-            max: 15,
+            max: 10,
             maxTicksLimit: 7
           },
           gridLines: {

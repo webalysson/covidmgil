@@ -1,6 +1,5 @@
 //padrão
     (function($) {
-
         //dados
         d3.csv('https://raw.githubusercontent.com/webalysson/covidmgil/master/dados/notifications_mgil.csv')
         .then(function(data){
