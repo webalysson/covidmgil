@@ -52,7 +52,7 @@ function grafico_barras_suspeitos(div_grafico_suspeitos){
           ticks: {
             min: 0,
             max: 10,
-            maxTicksLimit: 7
+            maxTicksLimit: 10
           },
           gridLines: {
             display: true
@@ -91,14 +91,14 @@ function grafico_barras_descartados(div_grafico_descartados){
             display: false
           },
           ticks: {
-            maxTicksLimit: 45
+            maxTicksLimit: 50
           }
         }],
         yAxes: [{
           ticks: {
             min: 0,
-            max: 30,
-            maxTicksLimit: 7
+            max: 140,
+            maxTicksLimit: 15
           },
           gridLines: {
             display: true
