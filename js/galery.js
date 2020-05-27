@@ -19,12 +19,29 @@ function gerarGaleiraDeImagens(dadosMgil) {
     var containerImagem = document.getElementById("galeria");
 
     function criarImagens(arrayDeImagens) {
+        var div = document.createElement("div");
+        div.className = "col-sm-6 col-md-4";
+
+        var a = document.createElement("a");
+        a.className = "lightbox";
+        a.href = arrayDeImagens;
+
         var imagem = document.createElement("img");
         imagem.src = arrayDeImagens;
-        imagem.width = "400";
-        imagem.style.margin = "5px";
 
-        return imagem;
+         
+        div.appendChild(a);
+        a.append(imagem);
+        // var img = document.getElementById(arrayDeImagens).appendChild('<img src="' + arrayDeImagens + '">')
+
+        return div;
+
+        // var imagem = document.createElement("img");
+        // imagem.src = arrayDeImagens;
+        // imagem.width = "400";
+        // imagem.style.margin = "5px";
+
+        // return imagem;
     }
     arrayDeImagens.forEach(imagem => {
             containerImagem.appendChild(criarImagens(imagem))
