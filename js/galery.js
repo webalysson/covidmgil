@@ -19,29 +19,26 @@ function gerarGaleiraDeImagens(dadosMgil) {
     var containerImagem = document.getElementById("galeria");
 
     function criarImagens(arrayDeImagens) {
+        // Div de container de imagerm
         var div = document.createElement("div");
-        div.className = "col-sm-6 col-md-4";
+        div.className = "col-sm-4 col-md-4 mb-4";
 
+        // Link de referencia para ser usado no JS para chamar lightbox
         var a = document.createElement("a");
-        a.className = "lightbox";
+        a.className = "col-sm-4";
         a.href = arrayDeImagens;
+        a.dataset.toggle = "lightbox";
+        a.dataset.gallery = "example-gallery";
 
+        // Imagem que será mostrada
         var imagem = document.createElement("img");
+        imagem.className = "img-fluid";
         imagem.src = arrayDeImagens;
 
-         
         div.appendChild(a);
         a.append(imagem);
-        // var img = document.getElementById(arrayDeImagens).appendChild('<img src="' + arrayDeImagens + '">')
 
         return div;
-
-        // var imagem = document.createElement("img");
-        // imagem.src = arrayDeImagens;
-        // imagem.width = "400";
-        // imagem.style.margin = "5px";
-
-        // return imagem;
     }
     arrayDeImagens.forEach(imagem => {
             containerImagem.appendChild(criarImagens(imagem))

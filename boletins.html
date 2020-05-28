@@ -10,7 +10,7 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <link rel="stylesheet" href="css/gallery-grid.css">
 </head>
   <body>
@@ -45,9 +45,10 @@
 
     <!-- Conteúdo principal -->
     <!-- <div id="galeria" class="container-fluid"></div> -->
-    <div class="container-fluid galery-container">
+    <div class="container-fluid">
+    <h1 class="mt-4" style="text-align: center;">Boletins</h1>
         <div class="tz-gallery">
-            <div class="row" id="galeria">
+            <div class="row mb-4" id="galeria">
             </div>
         </div>
     </div>
@@ -59,9 +60,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/scriptGaleria.js"></script>
     <script src="js/galery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
     <script>
-        baguetteBox.run('.tz-gallery');
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
     </script>
 </body>
 </html>
