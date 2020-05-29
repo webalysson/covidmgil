@@ -10,7 +10,7 @@
             gerarGraficoConfirmados(data.slice(-15));
             ultimo_boletim = data[data.length-1]; //pegar o último registro de boletim cadastrado
             document.getElementById('notificados').innerHTML = ultimo_boletim["Notificados"];
-            document.getElementById('suspeitos').innerHTML = ultimo_boletim["Suspeitos"];
+            document.getElementById('recuperados').innerHTML = ultimo_boletim["Recuperados"]; //Desde 25/05
             document.getElementById('descartados').innerHTML = ultimo_boletim["Descartados"];
             document.getElementById('confirmados').innerHTML = ultimo_boletim["Confirmados"];
             //Inserir a informação na página inicial
