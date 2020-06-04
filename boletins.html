@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <link rel="stylesheet" href="css/gallery-grid.css">
+    <link rel="stylesheet" href="css/carregamento.css">
 </head>
   <body>
     <!-- Navabar superior, com link de acesso ao Instagem -->
@@ -44,8 +45,19 @@
     </nav>
 
     <!-- Conteúdo principal -->
+
+    <!-- Loading -->
+    <section id="loading" style="display: block">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center vh-100">
+                    <img src="https://olaargentina.com/wp-content/uploads/2019/11/loading-gif-transparent-10.gif" alt="">
+                </div>
+            </div>
+    </section>
+    
+
     <!-- <div id="galeria" class="container-fluid"></div> -->
-    <div class="container-fluid" id="margem">
+    <div class="container-fluid" id="margem" style="display: none">
     <h1 class="justify-center text-center">Boletins</h1>
         <div class="tz-gallery">
             <div class="row mb-4" id="galeria">
@@ -75,10 +87,6 @@
     <script src="js/galery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
     <script>
-    jQuery(window).load(function(){
-        jQuery("#galeria").delay(2000).fadeOut("slow");
-    })
-
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
             event.preventDefault();
             $(this).ekkoLightbox();

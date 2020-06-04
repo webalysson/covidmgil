@@ -118,3 +118,62 @@ function gerarGraficoConfirmados(dadosMgil){
   });
 
 }
+
+// Gráficos de óbitos
+
+function gerarGraficoObitos(dadosMgil){
+  //console.log(dadosMgil);
+  var dadosMgil_Labels = dadosMgil.map(function(d) {return d.Data});
+  var dadosMgil_Data = dadosMgil.map(function(d) {return d.Obitos});
+  
+  var ctx = document.getElementById("grafico_obitos");
+  var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: dadosMgil_Labels,
+      datasets: [{
+        label: "Óbitos",
+        lineTension: 0.3,
+        backgroundColor: "rgba(2,117,216,0.2)",
+        borderColor: "rgba(2,117,216,1)",
+        pointRadius: 5,
+        pointBackgroundColor: "rgba(2,117,216,1)",
+        pointBorderColor: "rgba(255,255,255,0.8)",
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: "rgba(2,117,216,1)",
+        pointHitRadius: 50,
+        pointBorderWidth: 2,
+        data: dadosMgil_Data,
+      }],
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          time: {
+            unit: 'Data'
+          },
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            maxTicksLimit: 45
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            min: 0,
+            max: 25,
+            maxTicksLimit: 10
+          },
+          gridLines: {
+            color: "rgba(0, 0, 0, .125)",
+          }
+        }],
+      },
+      legend: {
+        display: false
+      }
+    }
+  });
+
+}

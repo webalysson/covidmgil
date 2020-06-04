@@ -14,6 +14,18 @@
 //     imageArrayContainer.appendChild(criarArrayDeImagens(imagem));
 // });
 
+// load
+
+var i = setInterval(function () {
+    
+    clearInterval(i);
+  
+    // O código desejado é apenas isto:
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("margem").style.display = "block";
+
+    }, 3000);
+
 function gerarGaleiraDeImagens(dadosMgil) {
     var arrayDeImagens = dadosMgil.map(function(d) {return d.Boletin});
     var containerImagem = document.getElementById("galeria");
