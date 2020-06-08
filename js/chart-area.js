@@ -6,6 +6,7 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 function gerarGraficoArea(dadosMgil){
   //console.log(dadosMgil);
+  // Gráfico Notificados
   var dadosMgil_Labels = dadosMgil.map(function(d) {return d.Data});
   var dadosMgil_Data = dadosMgil.map(function(d) {return d.Notificados});
   
@@ -45,7 +46,7 @@ function gerarGraficoArea(dadosMgil){
         yAxes: [{
           ticks: {
             min: 0,
-            max: 200,
+            max: 260,
             maxTicksLimit: 10
           },
           gridLines: {
