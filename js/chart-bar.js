@@ -4,7 +4,7 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 //dados previamente carregados e chamada esta function
 var grafico_barras_labels;
-var dados_suspeitos;
+//var dados_suspeitos;
 var dados_descartados;
 
 function gerarGraficoBarras(dadosMgil){
@@ -14,9 +14,9 @@ function gerarGraficoBarras(dadosMgil){
     dados_descartados = dadosMgil.map(function(d) {return d.Descartados});
 
     // Bar Chart
-    var div_grafico_suspeitos = document.getElementById("grafico_barras_suspeitos");
+    //var div_grafico_suspeitos = document.getElementById("grafico_barras_suspeitos");
     var div_grafico_descartados = document.getElementById("grafico_barras_descartados");
-    grafico_barras_suspeitos(div_grafico_suspeitos);
+    //grafico_barras_suspeitos(div_grafico_suspeitos);
     grafico_barras_descartados(div_grafico_descartados);
 
 }

@@ -11,8 +11,9 @@ function gerarGraficoPizza(dadosMgil){
   var valores = [
       dadosMgil[dadosMgil.length-1].Notificados,
       dadosMgil[dadosMgil.length-1].Confirmados,
-      dadosMgil[dadosMgil.length-1].Suspeitos,
-      dadosMgil[dadosMgil.length-1].Descartados
+      dadosMgil[dadosMgil.length-1].Recuperados,
+      dadosMgil[dadosMgil.length-1].Descartados,
+      //dadosMgil[dadosMgil.length-1].Obitos,
     ];
 
   // Pie Chart Example
@@ -20,10 +21,10 @@ function gerarGraficoPizza(dadosMgil){
   var myPieChart = new Chart(grafico_pizza, {
     type: 'pie',
     data: {
-      labels: ["Notificados", "Confirmados", "Suspeitos", "Descartados"],
+      labels: ["Notificados", "Confirmados", "Recuperados", "Descartados"],
       datasets: [{
-        data: valores, //[12.21, 15.58, 11.25, 8.32],
-        backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
+        data: valores,
+        backgroundColor: ['#6c757d', '#ffc107', '#28a745', '#007bff'],
       }],
     },
   });

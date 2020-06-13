@@ -104,16 +104,25 @@
 
                 <!-- Gráficos -->
                 <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card mb-4">
+                            <!--<div class="card-header"><i class="fas fa-chart-area mr-1"></i>Casos confirmados</div>-->
+                            <div class="card-body"><canvas id="grafico_confirmados" width="100%" height="15"></canvas></div>
+                            <div class="card-footer small text-muted">Confirmados e Recuperados</div>                                                 
+                        </div>
+                    </div>                            
+                </div>                
+                <div class="row">
                     <div class="col-xl-6">
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Casos notificados</div>
+                            <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Notificados</div>
                             <div class="card-body"><canvas id="grafico_area" width="100%" height="40"></canvas></div>
                             <div class="card-footer small text-muted">Notificados</div>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Casos descartados</div>
+                            <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Descartados</div>
                             <div class="card-body"><canvas id="grafico_barras_descartados" width="100%" height="40"></canvas></div>
                             <div class="card-footer small text-muted">Descartados</div>                                                     
                         </div>
@@ -128,29 +137,13 @@
                         </div>
                     </div>
                     <div class="col-xl-6">
-                        <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Casos confirmados</div>
-                            <div class="card-body"><canvas id="grafico_confirmados" width="100%" height="40"></canvas></div>       
-                            <div class="card-footer small text-muted">Confirmados</div>                                             
+                        <div class="card mb-4">                         
+                            <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Recuperados</div>
+                            <div class="card-body"><canvas id="grafico_recuperados" width="100%" height="40"></canvas></div>       
+                            <div class="card-footer small text-muted">Recuperados</div>                                        
                         </div>
                     </div>                            
-                </div>
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="card mb-4">                         
-                            <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Casos suspeitos</div>
-                            <div class="card-body"><canvas id="grafico_barras_suspeitos" width="100%" height="40"></canvas></div>       
-                            <div class="card-footer small text-muted">Suspeitos</div>                                        
-                        </div>
-                    </div>  
-                    <div class="col-xl-6">
-                        <div class="card mb-4">                         
-                            <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Óbitos</div>
-                            <div class="card-body"><canvas id="grafico_obitos" width="100%" height="40"></canvas></div>       
-                            <div class="card-footer small text-muted">Óbitos</div>                                        
-                        </div>
-                    </div>                             
-                </div>                         
+                </div>                       
             </div>
         </main>
 

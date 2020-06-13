@@ -4,11 +4,13 @@
         //https://raw.githubusercontent.com/webalysson/covidmgil/master/dados/notifications_mgil.csv
         d3.csv('https://docs.google.com/spreadsheets/d/1pmHJzLZsE-7wnoXAlnBXmp1vKRx7B8K8j5xsnkH9jWk/export?format=csv&gid=295642056')
         .then(function(data){
-            gerarGraficoArea(data); //data.slice(-15)
-            gerarGraficoBarras(data);
+            gerarGraficoArea(data.slice(-30)); //data.slice(-15)
+            gerarGraficoBarras(data.slice(-30));
             gerarGraficoPizza(data);
-            gerarGraficoObitos(data)
-            gerarGraficoConfirmados(data.slice(-15));
+            //gerarGraficoObitos(data)
+            gerarGraficoRecuperados(data.slice(-30));
+            //gerarGraficoConfirmados(data.slice(-30));
+            gerarGraficoConfirmadosAndRecuperados(data.slice(-30));
             ultimo_boletim = data[data.length-1]; //pegar o último registro de boletim cadastrado
             document.getElementById('notificados').innerHTML = ultimo_boletim["Notificados"];
             document.getElementById('recuperados').innerHTML = ultimo_boletim["Recuperados"]; //Desde 25/05
