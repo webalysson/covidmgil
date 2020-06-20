@@ -321,11 +321,14 @@ function gerarTabela(dadosMgil) {
   function tabela() {
     // Tabela
     var tabela = document.createElement('table');
+    tabela.className = "table";
     // Título
     var thead = tabela.appendChild(document.createElement('thead'));
     var trTitulo = thead.appendChild(document.createElement('tr'));
     var thCasos= trTitulo.appendChild(document.createElement('th'));
+    thCasos.scope = "col";
     var thBairros = trTitulo.appendChild(document.createElement('th'));
+    thBairros.scope = 'col';
 
     thCasos.append("Casos");
     thBairros.append("Bairros");
@@ -337,6 +340,7 @@ function gerarTabela(dadosMgil) {
       var tr = document.createElement('tr');
       
       var th = document.createElement('th');
+      th.scope = "row"
       var td = document.createElement('td');
     
       th.innerHTML = caso;
