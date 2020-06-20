@@ -21,4 +21,9 @@
             document.getElementById("info_atualizacao").innerHTML = "Último boletim: " + ultimo_boletim["Data"] + "/2020";
         });
 
+        d3.csv('https://docs.google.com/spreadsheets/d/1pmHJzLZsE-7wnoXAlnBXmp1vKRx7B8K8j5xsnkH9jWk/export?format=csv&id=1pmHJzLZsE-7wnoXAlnBXmp1vKRx7B8K8j5xsnkH9jWk&gid=155227802')
+        .then(function(data){
+            gerarTabela(data);
+        })
+
 })(jQuery);

@@ -311,3 +311,48 @@ function gerarGraficoRecuperados(dadosMgil){
   });
 
 }
+
+function gerarTabela(dadosMgil) {
+  var casos = dadosMgil.map(function(d) {return d.CASOS});
+  var bairros = dadosMgil.map(function(d) {return d.BAIRRO});
+
+  var corpoTabela = document.getElementById('tabela-bairros');
+  function tabela() {
+    // Tabela
+    var tabela = document.createElement('table');
+    // Título
+    var thead = tabela.appendChild(document.createElement('thead'));
+    var trTitulo = thead.appendChild(document.createElement('tr'));
+    var thCasos= trTitulo.appendChild(document.createElement('th'));
+    var thBairros = trTitulo.appendChild(document.createElement('th'));
+
+    thCasos.append("Casos");
+    thBairros.append("Bairros");
+
+    var tbody = tabela.appendChild(document.createElement('tbody'));
+
+    // Gerar Linha
+    function tr(caso, bairro) {
+      var tr = document.createElement('tr');
+      
+      var th = document.createElement('th');
+      var td = document.createElement('td');
+    
+      th.innerHTML = caso;
+      td.innerHTML = bairro;
+      tr.appendChild(th);
+      tr.appendChild(td);
+
+      return tr;
+    }
+
+    // Adiciona Elemento linha a linha
+    for (var i = 0; i < casos.length; i++) {
+      tbody.appendChild(tr(casos[i], bairros[i]));
+    }
+
+    return tabela;
+  }
+
+  corpoTabela.appendChild(tabela());
+}
