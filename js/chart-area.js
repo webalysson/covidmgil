@@ -312,6 +312,7 @@ function gerarGraficoRecuperados(dadosMgil){
 
 }
 
+// Gerar a tabela Modal
 function gerarTabela(dadosMgil) {
   var casos = dadosMgil.map(function(d) {return d.CASOS});
   var bairros = dadosMgil.map(function(d) {return d.BAIRRO});
