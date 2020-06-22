@@ -46,7 +46,7 @@ function gerarGraficoArea(dadosMgil){
         yAxes: [{
           ticks: {
             min: 0,
-            max: 300,
+            max: 400,
             maxTicksLimit: 10
           },
           gridLines: {
@@ -296,7 +296,7 @@ function gerarGraficoRecuperados(dadosMgil){
         yAxes: [{
           ticks: {
             min: 0,
-            max: 25,
+            max: 50,
             maxTicksLimit: 10
           },
           gridLines: {

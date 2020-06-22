@@ -21,7 +21,7 @@ function gerarGaleiraDeImagens(dadosMgil) {
     function criarImagens(arrayDeImagens) {
         // Div de container de imagerm
         var div = document.createElement("div");
-        div.className = "col-sm-4 col-md-4 mb-4";
+        div.className = "col-sm-2 col-md-2 mb-2";
 
         // Link de referencia para ser usado no JS para chamar lightbox
         var a = document.createElement("a");
@@ -34,6 +34,8 @@ function gerarGaleiraDeImagens(dadosMgil) {
         var imagem = document.createElement("img");
         imagem.className = "img-fluid";
         imagem.src = arrayDeImagens;
+        imagem.width = 200;
+        imagem.height = 200;
 
         div.appendChild(a);
         a.append(imagem);
