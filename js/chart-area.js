@@ -142,7 +142,7 @@ function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
         pointBorderColor: "rgba(255,255,255,0.8)",
         pointHoverRadius: 5,
         pointHoverBackgroundColor: "rgba(247,202,24,1)",
-        pointHitRadius: 50,
+        pointHitRadius: 70,
         pointBorderWidth: 2,
         data: dadosMgil_Data_Confirmados,
       },
@@ -157,7 +157,7 @@ function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
       pointBorderColor: "rgba(255,255,255,0.8)",
       pointHoverRadius: 5,
       pointHoverBackgroundColor: "rgba(11,156,49,1)",
-      pointHitRadius: 50,
+      pointHitRadius: 70,
       pointBorderWidth: 2,
       data: dadosMgil_Data_Recuperados, 
       }     
@@ -180,7 +180,7 @@ function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
         yAxes: [{
           ticks: {
             min: 0,
-            max: 50,
+            max: 70,
             maxTicksLimit: 10
           },
           gridLines: {

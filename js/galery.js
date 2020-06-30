@@ -16,9 +16,10 @@
 
 function gerarGaleiraDeImagens(dadosMgil) {
     var arrayDeImagens = dadosMgil.map(function(d) {return d.Boletin});
+    var dataBoletim = dadosMgil.map(function(d) {return d.Data});
     var containerImagem = document.getElementById("galeria");
 
-    function criarImagens(arrayDeImagens) {
+    function criarImagens(arrayDeImagens, dataBoletim) {
         // Div de container de imagerm
         var div = document.createElement("div");
         div.className = "col-sm-2 col-md-2 mb-2";
@@ -43,7 +44,7 @@ function gerarGaleiraDeImagens(dadosMgil) {
         return div;
     }
     arrayDeImagens.forEach(imagem => {
-            containerImagem.appendChild(criarImagens(imagem))
+            containerImagem.appendChild(criarImagens(imagem, dataBoletim[imagem]))
         }
     )
 }
