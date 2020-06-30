@@ -2,7 +2,7 @@
     (function($) {
         //dados
         //https://raw.githubusercontent.com/webalysson/covidmgil/master/dados/notifications_mgil.csv
-        d3.csv('https://docs.google.com/spreadsheets/d/1pmHJzLZsE-7wnoXAlnBXmp1vKRx7B8K8j5xsnkH9jWk/export?format=csv&gid=295642056')
+        d3.csv('https://raw.githubusercontent.com/webalysson/covidmgil/master/dados/COVIDMGIL%20-%20Dados_Boletins.csv')
         .then(function(data){
             gerarGraficoArea(data.slice(-30)); //data.slice(-15)
             gerarGraficoBarras(data.slice(-30));
