@@ -127,7 +127,7 @@ function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
   var dadosMgil_Data_Confirmados = dadosMgil.map(function(d) {return d.Confirmados});
   var dadosMgil_Data_Recuperados = dadosMgil.map(function(d) {return d.Recuperados});
   
-  var ctx = document.getElementById("grafico_confirmados");
+  var ctx = document.getElementById("grafico_confirmados_recuperados");
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -190,6 +190,74 @@ function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
       },
       legend: {
         display: true
+      }
+    }
+  });
+
+}
+
+
+// Gráficos de Novos Casos diários
+function gerarGraficoNovosCasos(dadosMgil){
+  var dadosMgil_Labels = dadosMgil.map(function(d) {return d.Data});
+  var dadosMgil_Confirmados = dadosMgil.map(function(d) {return d.Confirmados});
+  
+  var confirmados = dadosMgil_Confirmados.map(function (x) { 
+    return parseInt(x, 10); 
+  });
+
+  dados_novos_casos = []
+  dados_novos_casos.push(0);
+  for(i=0; i<=confirmados.length; i++){
+    dados_novos_casos.push(confirmados[i+1]-confirmados[i]);
+  }
+
+  var ctx = document.getElementById("grafico_novos_casos");
+  var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: dadosMgil_Labels,
+      datasets: [{
+        label: "Novos Casos",
+        lineTension: 0.3,
+        backgroundColor: "rgba(2,117,216,0.2)",
+        borderColor: "rgba(2,117,216,1)",
+        pointRadius: 5,
+        pointBackgroundColor: "rgba(2,117,216,1)",
+        pointBorderColor: "rgba(255,255,255,0.8)",
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: "rgba(2,117,216,1)",
+        pointHitRadius: 50,
+        pointBorderWidth: 2,
+        data: dados_novos_casos,
+      }],
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          time: {
+            unit: 'Data'
+          },
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            maxTicksLimit: 30
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            min: 0,
+            max: 15,
+            maxTicksLimit: 4
+          },
+          gridLines: {
+            color: "rgba(0, 0, 0, .125)",
+          }
+        }],
+      },
+      legend: {
+        display: false
       }
     }
   });
