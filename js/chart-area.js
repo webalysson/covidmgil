@@ -248,7 +248,7 @@ function gerarGraficoNovosCasos(dadosMgil){
         yAxes: [{
           ticks: {
             min: 0,
-            max: 15,
+            max: 20,
             maxTicksLimit: 4
           },
           gridLines: {
