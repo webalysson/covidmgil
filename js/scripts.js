@@ -20,13 +20,20 @@
             document.getElementById('descartados').innerHTML = ultimo_boletim["Descartados"];
             document.getElementById('confirmados').innerHTML = ultimo_boletim["Confirmados"];
             document.getElementById('obitos').innerHTML = ultimo_boletim["Obitos"];
+            //calcular a quantidade em tratamento = confirmados - (recuperados+obitos)
+            document.getElementById('em_tratamento').innerHTML = parseInt(ultimo_boletim["Confirmados"])-
+                                                                 (parseInt(ultimo_boletim["Recuperados"])+
+                                                                 parseInt(ultimo_boletim["Obitos"]));
             //Inserir a informação na página inicial
             var novos_casos = (parseInt(ultimo_boletim["Confirmados"]))-(parseInt(penultimo_boletim["Confirmados"]));
             var ultima_semana = (parseInt(ultimo_boletim["Confirmados"]))-(parseInt(ultima_semana["Confirmados"]))
+
             var texto_info = "Atualização: " + ultimo_boletim["Data"] + "/2020";
             texto_info += " | "+ novos_casos+" novos casos em relação ao boletim anterior";
             texto_info += " | "+ultima_semana+" na última semana";
+
             document.getElementById("info_atualizacao").innerHTML = texto_info;
+
         });
 
         d3.csv('https://raw.githubusercontent.com/webalysson/covidmgil/master/dados/COVIDMGIL%20-%20Bairros.csv')
