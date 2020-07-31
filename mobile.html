@@ -11,8 +11,8 @@
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
         <script type="text/javascript">
-            if (screen.width <= 720) {
-            window.location = "mobile.html";
+            if (screen.width > 720) {
+            window.location = "index.html";
         }
         </script>
     </head>
@@ -150,7 +150,7 @@
                     <div class="col-xl-12">
                         <div class="card mb-4">
                             <!-- <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Casos confirmados</div> -->
-                            <div class="card-body"><canvas id="grafico_confirmados_recuperados" height="18" width="100%"></canvas></div>
+                            <div class="card-body"><canvas id="grafico_confirmados_recuperados" height="70" width="100%"></canvas></div>
                             <!-- <div class="card-footer small text-muted">Confirmados e Recuperados</div>                                                 -->
                         </div>
                     </div>                            
@@ -160,7 +160,7 @@
                     <div class="col-xl-12">
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Novos casos</div>
-                            <div class="card-body"><canvas id="grafico_novos_casos" height="10" width="100%"></canvas></div>
+                            <div class="card-body"><canvas id="grafico_novos_casos" height="70" width="100%"></canvas></div>
                             <div class="card-footer small text-muted">Novos casos diários</div>
                         </div>
                     </div>                            
@@ -170,7 +170,7 @@
                     <div class="col-xl-12">
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Notificados, Descartados e Confirmados por dia</div>
-                            <div class="card-body"><canvas id="grafico_barras_notificados_descartados_diario" width="100%" height="14"></canvas></div>
+                            <div class="card-body"><canvas id="grafico_barras_notificados_descartados_diario" height="70" width="100%"></canvas></div>
                             <div class="card-footer small text-muted">Dados diários</div>                                                     
                         </div>
                     </div>
@@ -180,7 +180,7 @@
                     <div class="col-xl-12">
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Total de Notificados e Descartados</div>
-                            <div class="card-body"><canvas id="grafico_barras_notificados_descartados" width="100%" height="14"></canvas></div>
+                            <div class="card-body"><canvas id="grafico_barras_notificados_descartados" height="70" width="100%"></canvas></div>
                             <div class="card-footer small text-muted">Quantitativo de Notificados e Descartados</div>                                                     
                         </div>
                     </div>
@@ -190,7 +190,7 @@
                     <div class="col-xl-12">
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-chart-pie mr-1"></i>Agrupamento</div>
-                            <div class="card-body"><canvas id="grafico_pizza" width="100%" height="17"></canvas></div>  
+                            <div class="card-body"><canvas id="grafico_pizza" height="70" width="100%"></canvas></div>  
                             <!--<div class="card-footer small text-muted">Visão geral</div> -->
                         </div>
                     </div>
