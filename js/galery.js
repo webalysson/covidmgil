@@ -18,6 +18,7 @@ function gerarGaleiraDeImagens(dadosMgil) {
     var arrayDeImagens = dadosMgil.map(function(d) {return d.Boletin});
     var dataBoletim = dadosMgil.map(function(d) {return d.Data});
     var containerImagem = document.getElementById("galeria");
+    var limite = 12 // Limite de imagens
 
     function criarImagens(arrayDeImagens, dataBoletim) {
         // Div de container de imagerm
@@ -43,8 +44,35 @@ function gerarGaleiraDeImagens(dadosMgil) {
 
         return div;
     }
-    arrayDeImagens.forEach(imagem => {
-            containerImagem.appendChild(criarImagens(imagem, dataBoletim[imagem]))
-        }
-    )
+ 
+    // Nova função para apresentar apenas 12 imagens
+    function mostrarImagens() {
+        var anterior = limite - 12
+        console.log(limite);
+        console.log(anterior); 
+
+            if (limite >= arrayDeImagens.length - 1) {
+                limite = arrayDeImagens.length - 1
+                $("#carregar").remove();
+            } 
+            if (anterior != 0) {
+                var anterior = limite - 11
+            }
+            for(var i = anterior; i <= limite; i++) {
+                containerImagem.appendChild(criarImagens(arrayDeImagens[i], dataBoletim[i]))
+            }
+            limite += 12;
+    }
+
+    mostrarImagens();
+    $('#carregar').on('click',function() {
+        mostrarImagens();
+    })
+
+    //console.log(arrayDeImagens.length / 12);
+
+    // arrayDeImagens.forEach(imagem => {
+    //         containerImagem.appendChild(criarImagens(imagem, dataBoletim[imagem]))
+    //     }
+    // )
 }
