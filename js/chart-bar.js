@@ -108,7 +108,7 @@ function grafico_barras_notificados_descartados(div_grafico_notificados_descarta
         yAxes: [{
           ticks: {
             min: 0,
-            max: 1500,
+            max: 2000,
             maxTicksLimit: 10
           },
           gridLines: {
