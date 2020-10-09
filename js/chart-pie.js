@@ -5,14 +5,14 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 function gerarGraficoPizza(dadosMgil){
 
   //console.log(dadosMgil);
-  var dadosMgil_Labels = dadosMgil.map(function(d) {return d.Data});
-  var dadosMgil_Data = dadosMgil.map(function(d) {return d.Notificados});
+  var dadosMgil_Labels = dadosMgil.map(function(d) {return d.data});
+  var dadosMgil_Data = dadosMgil.map(function(d) {return d.notificados});
 
   var valores = [
-      dadosMgil[dadosMgil.length-1].Notificados,
-      dadosMgil[dadosMgil.length-1].Confirmados,
-      dadosMgil[dadosMgil.length-1].Recuperados,
-      dadosMgil[dadosMgil.length-1].Descartados,
+      dadosMgil[dadosMgil.length-1].notificados,
+      dadosMgil[dadosMgil.length-1].confirmados,
+      dadosMgil[dadosMgil.length-1].recuperados,
+      dadosMgil[dadosMgil.length-1].descartados,
       //dadosMgil[dadosMgil.length-1].Obitos,
     ];
 

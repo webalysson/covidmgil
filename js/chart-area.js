@@ -7,8 +7,8 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 function gerarGraficoArea(dadosMgil){
   //console.log(dadosMgil);
   // Gráfico Notificados
-  var dadosMgil_Labels = dadosMgil.map(function(d) {return d.Data});
-  var dadosMgil_Data = dadosMgil.map(function(d) {return d.Notificados});
+  var dadosMgil_Labels = dadosMgil.map(function(d) {return d.data});
+  var dadosMgil_Data = dadosMgil.map(function(d) {return d.notificados});
   
   var ctx = document.getElementById("grafico_area");
   var myLineChart = new Chart(ctx, {
@@ -123,9 +123,9 @@ function gerarGraficoConfirmados(dadosMgil){
 
 //grafico de casos confirmados e  recuperados
 function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
-  var dadosMgil_Labels = dadosMgil.map(function(d) {return d.Data});
-  var dadosMgil_Data_Confirmados = dadosMgil.map(function(d) {return d.Confirmados});
-  var dadosMgil_Data_Recuperados = dadosMgil.map(function(d) {return d.Recuperados});
+  var dadosMgil_Labels = dadosMgil.map(function(d) {return d.data});
+  var dadosMgil_Data_Confirmados = dadosMgil.map(function(d) {return d.confirmados});
+  var dadosMgil_Data_Recuperados = dadosMgil.map(function(d) {return d.recuperados});
   
   var ctx = document.getElementById("grafico_confirmados_recuperados");
   var myLineChart = new Chart(ctx, {
@@ -199,8 +199,8 @@ function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
 
 // Gráficos de Novos Casos diários
 function gerarGraficoNovosCasos(dadosMgil){
-  var dadosMgil_Labels = dadosMgil.map(function(d) {return d.Data});
-  var dadosMgil_Confirmados = dadosMgil.map(function(d) {return d.Confirmados});
+  var dadosMgil_Labels = dadosMgil.map(function(d) {return d.data});
+  var dadosMgil_Confirmados = dadosMgil.map(function(d) {return d.confirmados});
   
   var confirmados = dadosMgil_Confirmados.map(function (x) { 
     return parseInt(x, 10); 

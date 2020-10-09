@@ -10,11 +10,11 @@ var dados_confirmados;
 var dados_notificados;
 
 function gerarGraficoBarras(dadosMgil){
-    grafico_barras_labels = dadosMgil.map(function(d) {return d.Data});
+    grafico_barras_labels = dadosMgil.map(function(d) {return d.data});
     //dados_suspeitos = dadosMgil.map(function(d) {return d.Suspeitos});
-    dados_descartados = dadosMgil.map(function(d) {return d.Descartados});
-    dados_confirmados = dadosMgil.map(function(d) {return d.Confirmados});
-    dados_notificados = dadosMgil.map(function(d) {return d.Notificados});
+    dados_descartados = dadosMgil.map(function(d) {return d.descartados});
+    dados_confirmados = dadosMgil.map(function(d) {return d.confirmados});
+    dados_notificados = dadosMgil.map(function(d) {return d.notificados});
     //var div_grafico_suspeitos = document.getElementById("grafico_barras_suspeitos");
     var div_grafico_notificados_descartados = document.getElementById("grafico_barras_notificados_descartados");
     var div_grafico_notificados_descartados_diario = document.getElementById("grafico_barras_notificados_descartados_diario");
