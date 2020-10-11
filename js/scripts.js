@@ -8,7 +8,7 @@
         // var dados = d3.csv('http://localhost.com:8000/api/list/');
         d3.json('https://covidmonsenhorgil.herokuapp.com/api/list/')
         .then(function(data){
-            console.log(data);
+            data.map(function(d) {d.data = date_format(d.data)});
             //gerarGraficoArea(data.slice(-30)); //data.slice(-15)
             gerarGraficoBarras(data.slice(-30));
             gerarGraficoPizza(data);
@@ -47,3 +47,11 @@
         })
 
 })(jQuery);
+
+
+function date_format(data){
+    var date = Date.parse(data+"T00:00:00-0300");
+    date = new Date(date);
+    date = new Intl.DateTimeFormat('pt-BR').format(date); 
+    return date
+}
