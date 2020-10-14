@@ -1,13 +1,12 @@
 //padrão
     (function($) {
         // dados
-        // https://raw.githubusercontent.com/webalysson/covidmgil/master/dados/notifications_mgil.csv
-        // http://localhost.com:8000/api/list/
-        // atual
-        // d3.csv('https://raw.githubusercontent.com/webalysson/covidmgil/master/dados/COVIDMGIL%20-%20Dados_Boletins.csv')
-        // var dados = d3.csv('http://localhost.com:8000/api/list/');
-        d3.json('https://covidmonsenhorgil.herokuapp.com/api/list/')
+        var api_local = 'http://localhost.com:8000';
+        var api_producao = 'https://covidmonsenhorgil.herokuapp.com';
+
+        d3.json(api_producao+'/api/list/')
         .then(function(data){
+            //formatar a data no padrão pt-BR
             data.map(function(d) {d.data = date_format(d.data)});
             //gerarGraficoArea(data.slice(-30)); //data.slice(-15)
             gerarGraficoBarras(data.slice(-30));
@@ -41,7 +40,7 @@
 
         });
 
-        d3.csv('https://raw.githubusercontent.com/webalysson/covidmgil/master/dados/COVIDMGIL%20-%20Bairros.csv')
+        d3.json(api_producao+'/api/localidades/')
         .then(function(data){
             gerarTabela(data);
         })

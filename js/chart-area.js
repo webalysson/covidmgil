@@ -382,8 +382,8 @@ function gerarGraficoRecuperados(dadosMgil){
 
 // Gerar a tabela Modal
 function gerarTabela(dadosMgil) {
-  var casos = dadosMgil.map(function(d) {return d.CASOS});
-  var bairros = dadosMgil.map(function(d) {return d.BAIRRO});
+  var casos = dadosMgil.map(function(d) {return d.localidade});
+  var bairros = dadosMgil.map(function(d) {return d.registros});
 
   var corpoTabela = document.getElementById('tabela-bairros');
   function tabela() {
