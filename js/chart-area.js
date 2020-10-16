@@ -180,7 +180,7 @@ function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
         yAxes: [{
           ticks: {
             min: 0,
-            max: 500,
+            max: 1000,
             maxTicksLimit: 9
           },
           gridLines: {
