@@ -29,8 +29,8 @@
                                                                  (parseInt(ultimo_boletim["recuperados"])+
                                                                  parseInt(ultimo_boletim["obitos"]));
             //Inserir a informação na página inicial
-            var novos_casos = 0;//(parseInt(ultimo_boletim["Confirmados"]))-(parseInt(penultimo_boletim["Confirmados"]));
-            var ultima_semana = 0;//(parseInt(ultimo_boletim["Confirmados"]))-(parseInt(ultima_semana["Confirmados"]));
+            var novos_casos = (parseInt(ultimo_boletim["confirmados"]))-(parseInt(penultimo_boletim["confirmados"]));
+            var ultima_semana = (parseInt(ultimo_boletim["confirmados"]))-(parseInt(ultima_semana["confirmados"]));
 
             var texto_info = "Atualização: " + ultimo_boletim["data"];
             texto_info += " | "+ novos_casos+" novos casos em relação ao boletim anterior";
