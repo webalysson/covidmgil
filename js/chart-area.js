@@ -174,13 +174,13 @@ function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
             display: false
           },
           ticks: {
-            maxTicksLimit: 45
+            maxTicksLimit: 100
           }
         }],
         yAxes: [{
           ticks: {
             min: 0,
-            max: 1000,
+            max: 600,
             maxTicksLimit: 9
           },
           gridLines: {
@@ -242,7 +242,7 @@ function gerarGraficoNovosCasos(dadosMgil){
             display: false
           },
           ticks: {
-            maxTicksLimit: 30
+            maxTicksLimit: 200
           }
         }],
         yAxes: [{

@@ -58,15 +58,17 @@
         <main>
             <div class="container-fluid" id="margem">
 
-                <h1 class="mt-4">Monsenhor Gil-PI</h1>
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active" id="info_atualizacao"></li>
-                </ol>
+                <h1 style="float: left;">Monsenhor Gil-PI</h1>
+        
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn bg-warning btn-lg mb-4" data-toggle="modal" data-target="#modelId">
                     Bairros
-                    </button>
+                </button>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item active" id="info_atualizacao"></li>
+                </ol>
                     
                     <!-- Modal -->
                     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -153,12 +155,34 @@
 
                 </div>
 
+
+                Mostar grágicos dos últimos 
+                <select id="filtro_mes" onchange="filtrar_periodo(this.value)">
+                    <option value="30">30</option>
+                    <option value="60">60</option>
+                    <option value="90">90</option>
+                    <option value="120">120</option>
+                    <option value="">Todos</option>
+                </select> &nbsp;dias.
+
+                Ou mostrar dados por mês: 
+                <select id="filtro_mes" onchange="filtrar_mes(this.value)">
+                    <option value="04">Abril</option>
+                    <option value="05">Maio</option>
+                    <option value="06">Junho</option>
+                    <option value="07">Julho</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Setembro</option>
+                    <option value="10">Outubro</option>
+                </select>
+
+
                 <!-- Gráficos -->
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="card mb-4">
                             <!-- <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Casos confirmados</div> -->
-                            <div class="card-body"><canvas id="grafico_confirmados_recuperados" height="18" width="100%"></canvas></div>
+                            <div class="card-body"><canvas id="grafico_confirmados_recuperados" height="28" width="100%"></canvas></div>
                             <!-- <div class="card-footer small text-muted">Confirmados e Recuperados</div>                                                 -->
                         </div>
                     </div>                            
