@@ -7,6 +7,12 @@ url = 'https://covidmonsenhorgil.herokuapp.com/api/';
         d3.json(url+'boletins_por_periodo/?periodo=30') .then(function(data){
             montar_graficos(data);
         });
+
+    d3.json(url+'localidades/')
+        .then(function(data){
+            gerarTabela(data);
+        })
+
 })(jQuery);
 
 
