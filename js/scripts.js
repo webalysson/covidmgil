@@ -1,7 +1,7 @@
 // local
 //url = 'http://localhost.com:8000/api/';
 // produção    
-url = 'https://covidmonsenhorgil.herokuapp.com';
+url = 'https://covidmonsenhorgil.herokuapp.com/';
 
     (function($) {
         d3.json(url+'boletins_por_periodo/?periodo=30') .then(function(data){
