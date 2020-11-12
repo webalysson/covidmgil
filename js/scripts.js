@@ -44,7 +44,16 @@ function filtrar_mes(mes_referencia){
         dataType: "json",
         success: function (data) {
             //alert(data);
-            montar_graficos(data);
+            //montar_graficos(data);
+            //grafico_confirmados_recuperados = teste();
+            console.log(data);
+            var d = data.map(function(d) {return d.data});
+            var c = data.map(function(d) {return d.confirmados});
+            var r = data.map(function(d) {return d.recuperados});
+            console.log(c);
+            grafico_confirmados_recuperados.data={labels:d}
+            grafico_confirmados_recuperados.data.datasets=[{data:c},{data:r}];
+            grafico_confirmados_recuperados.update();
         },
         error: function (result) {
             alert("Não foi possível obter os dados no momento.");
@@ -55,7 +64,7 @@ function filtrar_mes(mes_referencia){
 
 
 function cards_numeros_totais(data){
-    console.log(data)
+    //console.log(data)
         //formatar a data no padrão pt-BR
         //data.map(function(d) {d.data = date_format(d.data)});
         //último registro de boletim cadastrado         

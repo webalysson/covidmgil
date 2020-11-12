@@ -2,7 +2,7 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
-//dados previamente carregados e chamada esta function
+grafico_confirmados_recuperados
 
 function gerarGraficoArea(dadosMgil){
   //console.log(dadosMgil);
@@ -10,8 +10,8 @@ function gerarGraficoArea(dadosMgil){
   var dadosMgil_Labels = dadosMgil.map(function(d) {return d.data});
   var dadosMgil_Data = dadosMgil.map(function(d) {return d.notificados});
   
-  var ctx = document.getElementById("grafico_area");
-  var myLineChart = new Chart(ctx, {
+  var element_grafico_area = document.getElementById("grafico_area");
+  var grafico_area = new Chart(element_grafico_area, {
     type: 'line',
     data: {
       labels: dadosMgil_Labels,
@@ -68,8 +68,8 @@ function gerarGraficoConfirmados(dadosMgil){
   var dadosMgil_Labels = dadosMgil.map(function(d) {return d.Data});
   var dadosMgil_Data = dadosMgil.map(function(d) {return d.Confirmados});
   
-  var ctx = document.getElementById("grafico_confirmados");
-  var myLineChart = new Chart(ctx, {
+  var element_grafico_confirmados = document.getElementById("grafico_confirmados");
+  var grafico_confirmados = new Chart(element_grafico_confirmados, {
     type: 'line',
     data: {
       labels: dadosMgil_Labels,
@@ -120,6 +120,12 @@ function gerarGraficoConfirmados(dadosMgil){
 
 }
 
+//teste
+function teste(){
+  //alert('Aqui');
+  //console.log(grafico_confirmados_recuperados);
+  return grafico_confirmados_recuperados;
+}
 
 //grafico de casos confirmados e  recuperados
 function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
@@ -127,8 +133,8 @@ function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
   var dadosMgil_Data_Confirmados = dadosMgil.map(function(d) {return d.confirmados});
   var dadosMgil_Data_Recuperados = dadosMgil.map(function(d) {return d.recuperados});
   
-  var ctx = document.getElementById("grafico_confirmados_recuperados");
-  var myLineChart = new Chart(ctx, {
+  var element_grafico_conf_rec = document.getElementById("grafico_confirmados_recuperados");
+  grafico_confirmados_recuperados = new Chart(element_grafico_conf_rec, {
     type: 'line',
     data: {
       labels: dadosMgil_Labels,
@@ -190,7 +196,8 @@ function gerarGraficoConfirmadosAndRecuperados(dadosMgil){
       },
       legend: {
         display: true
-      }
+      },
+      responsive: true,
     }
   });
 
@@ -212,8 +219,8 @@ function gerarGraficoNovosCasos(dadosMgil){
     dados_novos_casos.push(confirmados[i+1]-confirmados[i]);
   }
 
-  var ctx = document.getElementById("grafico_novos_casos");
-  var myLineChart = new Chart(ctx, {
+  var element_grafico_novos_casos = document.getElementById("grafico_novos_casos");
+  var grafico_novos_casos = new Chart(element_grafico_novos_casos, {
     type: 'line',
     data: {
       labels: dadosMgil_Labels,
@@ -270,8 +277,8 @@ function gerarGraficoObitos(dadosMgil){
   var dadosMgil_Labels = dadosMgil.map(function(d) {return d.Data});
   var dadosMgil_Data = dadosMgil.map(function(d) {return d.Obitos});
   
-  var ctx = document.getElementById("grafico_obitos");
-  var myLineChart = new Chart(ctx, {
+  var element_grafico_obitos = document.getElementById("grafico_obitos");
+  var grafico_obitos = new Chart(element_grafico_obitos, {
     type: 'line',
     data: {
       labels: dadosMgil_Labels,
@@ -328,8 +335,8 @@ function gerarGraficoRecuperados(dadosMgil){
   var dadosMgil_Labels = dadosMgil.map(function(d) {return d.Data});
   var dadosMgil_Data = dadosMgil.map(function(d) {return d.Recuperados});
   
-  var ctx = document.getElementById("grafico_recuperados");
-  var myLineChart = new Chart(ctx, {
+  var element_grafico_recuperados = document.getElementById("grafico_recuperados");
+  var grafico_recuperados = new Chart(element_grafico_recuperados, {
     type: 'line',
     data: {
       labels: dadosMgil_Labels,
