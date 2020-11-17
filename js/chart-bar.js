@@ -18,6 +18,7 @@ function gerarGraficoBarras(dadosMgil){
     //var div_grafico_suspeitos = document.getElementById("grafico_barras_suspeitos");
     var div_grafico_notificados_descartados = document.getElementById("grafico_barras_notificados_descartados");
     var div_grafico_notificados_descartados_diario = document.getElementById("grafico_barras_notificados_descartados_diario");
+    
     //var div_grafico_novos_casos = document.getElementById("grafico_novos_casos");
     //grafico_barras_suspeitos(div_grafico_suspeitos);
     grafico_barras_notificados_descartados(div_grafico_notificados_descartados);
@@ -108,7 +109,7 @@ function grafico_barras_notificados_descartados(div_grafico_notificados_descarta
         yAxes: [{
           ticks: {
             min: 0,
-            max: 2000,
+            max: 3000,
             maxTicksLimit: 10
           },
           gridLines: {

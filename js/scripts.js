@@ -13,7 +13,6 @@ url = 'https://covidmonsenhorgil.herokuapp.com/api/';
         .then(function(data){
             gerarTabela(data);
         })
-
 })(jQuery);
 
 
