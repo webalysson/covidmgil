@@ -104,9 +104,7 @@ function date_format(data) {
 }
 
 function cards_numeros_totais(data) {
-  // console.log(data)
   //formatar a data no padrão pt-BR
-  //data.map(function(d) {d.data = date_format(d.data)});
   //último registro de boletim cadastrado         
   ultimo_boletim = data[data.length - 1];
   //penúltimo registro de boletim para cálculo de novos casos
@@ -126,9 +124,10 @@ function cards_numeros_totais(data) {
   var novos_casos = (parseInt(ultimo_boletim["confirmados"])) - (parseInt(penultimo_boletim["confirmados"]));
   var ultima_semana = (parseInt(ultimo_boletim["confirmados"])) - (parseInt(ultima_semana["confirmados"]));
 
-  var texto_info = "Atualização: " + ultimo_boletim["data"];
-  texto_info += " | " + novos_casos + " novos casos em relação ao boletim anterior";
-  texto_info += " | " + ultima_semana + " na última semana";
+  var texto_info = `Atualização: ${date_format(ultimo_boletim["data"])}
+  | ${novos_casos} novos casos em relação ao boletim anterior
+  | ${ultima_semana} na última semana
+  `;
 
   document.getElementById("info_atualizacao").innerHTML = texto_info;
 }
