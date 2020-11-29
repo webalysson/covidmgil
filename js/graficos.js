@@ -127,11 +127,6 @@ var options_novos = {
         }
       }],
       yAxes: [{
-        ticks: {
-          min: 0,
-          max: 20,
-          maxTicksLimit: 4
-        },
         gridLines: {
           color: "rgba(0, 0, 0, .125)",
         }
