@@ -1,0 +1,136 @@
+graficos = new Grafico()
+graficos.add(ctx_confirmados, options_confirmados)
+graficos.add(ctx_novos, options_novos)
+graficos.add(ctx_diario, options_diarios)
+graficos.add(ctx_descartados, options_descartados)
+graficos.add(ctx_pizza, options_pizza)
+
+const url = 'https://covidmonsenhorgil.herokuapp.com/api/'
+fetch(`${url}localidades/`).then(response => response.json()).then(data => {
+  gerarTabela(data)
+})
+fetch(`${url}boletins_por_periodo/?periodo=30`).then(response => response.json()).then(data => {
+  cards_numeros_totais(data)
+
+  data.map(d => { d.data = date_format(d.data) })
+  const label = data.map(d => d.data);
+  graficos.update(0, [data.map(d => d.confirmados), data.map(d => d.recuperados)], label, true)
+  graficos.update(1, novos_casos(data.map(d => d.confirmados)), label)
+  graficos.update(2, novos_casos([data.map(d => d.notificados), data.map(d => d.descartados), data.map(d => d.confirmados)], true), label, true)
+  graficos.update(3, [data.map(d => d.notificados), data.map(d => d.descartados)], label, true)
+  graficos.update(4, gerar_pizza(data), ["Notificados", "Confirmados", "Recuperados", "Descartados"])
+})
+
+function filtrar_periodo(periodo) {
+  $.ajax({
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    url: url + "boletins_por_periodo/",
+    data: { periodo },
+    dataType: "json",
+    success: function (data) {
+      data.map(d => { d.data = date_format(d.data) })
+      const label = data.map(d => d.data);
+      graficos.clearAll()
+      graficos.update(0, [data.map(d => d.confirmados), data.map(d => d.recuperados)], label, true)
+      graficos.update(1, novos_casos(data.map(d => d.confirmados)), label)
+      graficos.update(2, novos_casos([data.map(d => d.notificados), data.map(d => d.descartados), data.map(d => d.confirmados)], true), label, true)
+      graficos.update(3, [data.map(d => d.notificados), data.map(d => d.descartados)], label, true)
+      graficos.update(4, gerar_pizza(data), ["Notificados", "Confirmados", "Recuperados", "Descartados"])
+    }
+  })
+}
+
+function filtrar_mes(mes) {
+  $.ajax({
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    url: url + "boletins_por_mes/",
+    data: { mes },
+    dataType: "json",
+    success: function (data) {
+      data.map(d => { d.data = date_format(d.data) })
+      const label = data.map(d => d.data);
+      graficos.clearAll()
+      graficos.update(0, [data.map(d => d.confirmados), data.map(d => d.recuperados)], label, true)
+      graficos.update(1, novos_casos(data.map(d => d.confirmados)), label)
+      graficos.update(2, novos_casos([data.map(d => d.notificados), data.map(d => d.descartados), data.map(d => d.confirmados)], true), label, true)
+      graficos.update(3, [data.map(d => d.notificados), data.map(d => d.descartados)], label, true)
+      graficos.update(4, gerar_pizza(data), ["Notificados", "Confirmados", "Recuperados", "Descartados"])
+    }
+  })
+}
+
+/* ---------------------------------------------------------------
+ *                    FUNÇÕES AUXILIARES
+ * ---------------------------------------------------------------
+*/
+
+function gerar_pizza(array) {
+  let data = [
+    array[array.length - 1].notificados,
+    array[array.length - 1].confirmados,
+    array[array.length - 1].recuperados,
+    array[array.length - 1].descartados,
+  ];
+  return data
+}
+
+function novos_casos(array, multiple = false) {
+  let data = [];
+  if (!multiple) {
+    data.push(0);
+    for (let i = 0; i <= array.length; i++) {
+      data.push(array[i + 1] - array[i])
+    }
+  } else {
+    for (let i = 0; i < array.length; i++) {
+      let label = [];
+      label.push(0)
+      for (let j = 0; j <= array[i].length; j++) {
+        label.push(array[i][j + 1] - array[i][j])
+      }
+      data.push(label)
+    }
+  }
+  return data
+}
+
+function date_format(data) {
+  var date = Date.parse(data + "T00:00:00-0300");
+  date = new Date(date);
+  date = new Intl.DateTimeFormat('pt-BR').format(date);
+  return date
+}
+
+function cards_numeros_totais(data) {
+  // console.log(data)
+  //formatar a data no padrão pt-BR
+  //data.map(function(d) {d.data = date_format(d.data)});
+  //último registro de boletim cadastrado         
+  ultimo_boletim = data[data.length - 1];
+  //penúltimo registro de boletim para cálculo de novos casos
+  penultimo_boletim = data[data.length - 2];
+  //ultima semana
+  ultima_semana = data[data.length - 8];
+  document.getElementById('notificados').innerHTML = ultimo_boletim["notificados"];
+  document.getElementById('recuperados').innerHTML = ultimo_boletim["recuperados"]; //Desde 25/05
+  document.getElementById('descartados').innerHTML = ultimo_boletim["descartados"];
+  document.getElementById('confirmados').innerHTML = ultimo_boletim["confirmados"];
+  document.getElementById('obitos').innerHTML = ultimo_boletim["obitos"];
+  //calcular a quantidade em tratamento = confirmados - (recuperados+obitos)
+  document.getElementById('em_tratamento').innerHTML = parseInt(ultimo_boletim["confirmados"]) -
+    (parseInt(ultimo_boletim["recuperados"]) +
+      parseInt(ultimo_boletim["obitos"]));
+  //Inserir a informação na página inicial
+  var novos_casos = (parseInt(ultimo_boletim["confirmados"])) - (parseInt(penultimo_boletim["confirmados"]));
+  var ultima_semana = (parseInt(ultimo_boletim["confirmados"])) - (parseInt(ultima_semana["confirmados"]));
+
+  var texto_info = "Atualização: " + ultimo_boletim["data"];
+  texto_info += " | " + novos_casos + " novos casos em relação ao boletim anterior";
+  texto_info += " | " + ultima_semana + " na última semana";
+
+  document.getElementById("info_atualizacao").innerHTML = texto_info;
+}
+
+

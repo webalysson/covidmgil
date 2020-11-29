@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Monsenhor Gil: COVID-19</title>
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QF29Y3FWT8"></script>
-        <script type="text/javascript">
-            if (screen.width <= 720) {
-                window.location = "mobile.html";
-            }
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Monsenhor Gil: COVID-19</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+        crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QF29Y3FWT8"></script>
+    <script type="text/javascript">
+        if (screen.width <= 720) {
+            window.location = "mobile.html";
+        }
 
         //Google Analytics
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-QF29Y3FWT8');
         // End Google Analytics
-        </script>
-    </head>
-    <body>
-        <!-- Navabar superior, com link de acesso ao Instagem -->
-        <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark ">
-            <a class="navbar-brand" href="index.html">COVID-19</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">
-                            Início <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    
-                    <!--
+    </script>
+</head>
+
+<body>
+    <!-- Navabar superior, com link de acesso ao Instagem -->
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark ">
+        <a class="navbar-brand" href="index.html">COVID-19</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">
+                        Início <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <!--
                     <li class="nav-item">
                         <a class="nav-link" href="boletins.html">
                             Boletins <span class="sr-only">(current)</span>
@@ -49,228 +53,240 @@
                     </li>
                     -->
 
-                    <li class="nav-item">
-                        <a target="_blank" class="nav-link" href="http://ec2-3-93-31-167.compute-1.amazonaws.com/jogos_saude/">
-                            <img src="img/dados.png" alt="Instagram"> Quiz Saúde <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a target="_blank" class="nav-link" href="https://www.instagram.com/tecinfo_mgil/">
-                            <img src="img/instagram_icon.png" alt="Instagram"> Instagram <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-            </div>
-        </nav>
+                <li class="nav-item">
+                    <a target="_blank" class="nav-link"
+                        href="http://ec2-3-93-31-167.compute-1.amazonaws.com/jogos_saude/">
+                        <img src="img/dados.png" alt="Instagram"> Quiz Saúde <span class="sr-only">(current)</span>
+                    </a>
+                </li>
 
-        <!-- Conteúdo principal -->
-        <main>
-            <div class="container-fluid" id="margem">
+                <li class="nav-item">
+                    <a target="_blank" class="nav-link" href="https://www.instagram.com/tecinfo_mgil/">
+                        <img src="img/instagram_icon.png" alt="Instagram"> Instagram <span
+                            class="sr-only">(current)</span>
+                    </a>
+                </li>
+        </div>
+    </nav>
 
-                <h1 style="float: left;">Monsenhor Gil-PI</h1>
-        
+    <!-- Conteúdo principal -->
+    <main>
+        <div class="container-fluid" id="margem">
 
-                <!-- Button trigger modal -->
-                <button type="button" class="btn bg-warning btn-lg mb-4" data-toggle="modal" data-target="#modelId">
-                    Bairros
-                </button>
+            <h1 style="float: left;">Monsenhor Gil-PI</h1>
 
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active" id="info_atualizacao"></li>
-                </ol>
-                    
-                    <!-- Modal -->
-                    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                    <div class="modal-header">
-                                            <h5 class="modal-title center">Confirmados por Localidade</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                        </div>
-                                <div class="modal-body">
-                                    <div class="container-fluid" id="tabela-bairros">
-                                        
-                                    </div>
-                                </div>
-                                <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                                </div>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn bg-warning btn-lg mb-4" data-toggle="modal" data-target="#modelId">
+                Bairros
+            </button>
+
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active" id="info_atualizacao"></li>
+            </ol>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title center">Confirmados por Localidade</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid" id="tabela-bairros">
+
                             </div>
                         </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                        </div>
                     </div>
+                </div>
+            </div>
 
-                <!-- Paineis -->
-                <div class="row">
-                    <div class="col-xl-2 col-md-6">
-                        <div class="card bg-success text-white mb-4">
-                            <div class="card-body">Recuperados</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                            <div id="recuperados"></div>                                   
-                                <!--
+            <!-- Paineis -->
+            <div class="row">
+                <div class="col-xl-2 col-md-6">
+                    <div class="card bg-success text-white mb-4">
+                        <div class="card-body">Recuperados</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div id="recuperados"></div>
+                            <!--
                                 <a class="small text-white stretched-link" href="#">View Details</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 -->
-                            </div>
                         </div>
                     </div>
-                    
-                    <div class="col-xl-2 col-md-6">
-                        <div class="card bg-secondary text-white mb-4">
-                            <div class="card-body">Notificados</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <div id="notificados"></div>  
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-2 col-md-6">
-                        <div class="card bg-primary text-white mb-4">
-                            <div class="card-body">Descartados</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <div id="descartados"></div>  
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-2 col-md-6">
-                        <div class="card bg-warning text-white mb-4">
-                            <div class="card-body">Confirmados</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <div id="confirmados"></div>  
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-2 col-md-6">
-                        <div class="card bg-danger text-white mb-4">
-                            <div class="card-body">Óbitos</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <div id="obitos"></div>  
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-xl-2 col-md-3">
-                        <div class="card bg-light text-muted mb-4">
-                            <div class="card-body">Em tratamento</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <div id="em_tratamento"></div>  
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-
-                <!-- Selecionar período -->
-                <div class="row mb-2 ml-2" id="periodo">
-                    Mostar grágicos dos últimos 
-                    <div class="col-1">
-                        <select id="filtro_mes" onchange="filtrar_periodo(this.value)" class="form-control">
-                            <option value="30">30</option>
-                            <option value="60">60</option>
-                            <option value="90">90</option>
-                            <option value="120">120</option>
-                            <option value="">Todos</option>
-                        </select>
-                    </div> &nbsp;dias.
-
-                    Ou mostrar dados por mês: 
-                    <div class="col-1">
-                        <select id="filtro_mes" onchange="filtrar_mes(this.value)" class="form-control">
-                            <option value="">Todos</option>
-                            <option value="04">Abril</option>
-                            <option value="05">Maio</option>
-                            <option value="06">Junho</option>
-                            <option value="07">Julho</option>
-                            <option value="08">Agosto</option>
-                            <option value="09">Setembro</option>
-                            <option value="10">Outubro</option>
-                        </select>
+                <div class="col-xl-2 col-md-6">
+                    <div class="card bg-secondary text-white mb-4">
+                        <div class="card-body">Notificados</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div id="notificados"></div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Gráficos -->
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card mb-4">
-                            <!-- <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Casos confirmados</div> -->
-                            <div class="card-body"><canvas id="grafico_confirmados_recuperados" height="28" width="100%"></canvas></div>
-                            <!-- <div class="card-footer small text-muted">Confirmados e Recuperados</div>                                                 -->
-                        </div>
-                    </div>                            
-                </div>         
-                
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Novos casos</div>
-                            <div class="card-body"><canvas id="grafico_novos_casos" height="10" width="100%"></canvas></div>
-                            <div class="card-footer small text-muted">Novos casos diários</div>
-                        </div>
-                    </div>                            
-                </div>      
-
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Notificados, Descartados e Confirmados por dia</div>
-                            <div class="card-body"><canvas id="grafico_barras_notificados_descartados_diario" width="100%" height="14"></canvas></div>
-                            <div class="card-footer small text-muted">Dados diários</div>                                                     
+                <div class="col-xl-2 col-md-6">
+                    <div class="card bg-primary text-white mb-4">
+                        <div class="card-body">Descartados</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div id="descartados"></div>
                         </div>
                     </div>
-                </div>                     
+                </div>
 
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Total de Notificados e Descartados</div>
-                            <div class="card-body"><canvas id="grafico_barras_notificados_descartados" width="100%" height="14"></canvas></div>
-                            <div class="card-footer small text-muted">Quantitativo de Notificados e Descartados</div>                                                     
+                <div class="col-xl-2 col-md-6">
+                    <div class="card bg-warning text-white mb-4">
+                        <div class="card-body">Confirmados</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div id="confirmados"></div>
                         </div>
                     </div>
-                </div>            
+                </div>
 
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-chart-pie mr-1"></i>Agrupamento</div>
-                            <div class="card-body"><canvas id="grafico_pizza" width="100%" height="17"></canvas></div>  
-                            <!--<div class="card-footer small text-muted">Visão geral</div> -->
+                <div class="col-xl-2 col-md-6">
+                    <div class="card bg-danger text-white mb-4">
+                        <div class="card-body">Óbitos</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div id="obitos"></div>
                         </div>
                     </div>
+                </div>
+
+
+                <div class="col-xl-2 col-md-3">
+                    <div class="card bg-light text-muted mb-4">
+                        <div class="card-body">Em tratamento</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div id="em_tratamento"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Selecionar período -->
+            <div class="row mb-2 ml-2" id="periodo">
+                Mostar grágicos dos últimos
+                <div class="col-1">
+                    <select id="filtro_mes" onchange="filtrar_periodo(this.value)" class="form-control">
+                        <option value="30">30</option>
+                        <option value="60">60</option>
+                        <option value="90">90</option>
+                        <option value="120">120</option>
+                        <option value="">Todos</option>
+                    </select>
+                </div> &nbsp;dias.
+
+                Ou mostrar dados por mês:
+                <div class="col-1">
+                    <select id="filtro_mes" onchange="filtrar_mes(this.value)" class="form-control">
+                        <option value="">Todos</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Maio</option>
+                        <option value="06">Junho</option>
+                        <option value="07">Julho</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value='11'>Novembro</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Gráficos -->
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card mb-4">
+                        <!-- <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Casos confirmados</div> -->
+                        <div class="card-body"><canvas id="grafico_confirmados_recuperados" height="28"
+                                width="100%"></canvas></div>
+                        <!-- <div class="card-footer small text-muted">Confirmados e Recuperados</div>                                                 -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card mb-4">
+                        <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Novos casos</div>
+                        <div class="card-body"><canvas id="grafico_novos_casos" height="10" width="100%"></canvas></div>
+                        <div class="card-footer small text-muted">Novos casos diários</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card mb-4">
+                        <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Notificados, Descartados e
+                            Confirmados por dia</div>
+                        <div class="card-body"><canvas id="grafico_barras_notificados_descartados_diario" width="100%"
+                                height="14"></canvas></div>
+                        <div class="card-footer small text-muted">Dados diários</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card mb-4">
+                        <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Total de Notificados e Descartados
+                        </div>
+                        <div class="card-body"><canvas id="grafico_barras_notificados_descartados" width="100%"
+                                height="14"></canvas></div>
+                        <div class="card-footer small text-muted">Quantitativo de Notificados e Descartados</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card mb-4">
+                        <div class="card-header"><i class="fas fa-chart-pie mr-1"></i>Agrupamento</div>
+                        <div class="card-body"><canvas id="grafico_pizza" width="100%" height="17"></canvas></div>
+                        <!--<div class="card-footer small text-muted">Visão geral</div> -->
+                    </div>
+                </div>
                 <div>
-                
 
-            </div>
-        </main>
 
-        <!-- Rodapé da página -->
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">*Fonte de dados: Boletins oficiais da Secretaria Municipal de Saúde</div>
-                    <div>
-                        Alunos do Curso Técnico em Informática / Monsenhor Gil / SEDUC-PI
-                    </div>
+                </div>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">*Fonte de dados: Boletins oficiais da Secretaria Municipal de Saúde</div>
+                <div>
+                    Alunos do Curso Técnico em Informática / Monsenhor Gil / SEDUC-PI
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="js/chart-area.js"></script>
-        <script src="js/chart-bar.js"></script>
-        <script src="js/chart-pie.js"></script>        
-        <script src="js/scripts.js"></script>
-        <!--
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="js/chart-area.js"></script> -->
+    <!-- <script src="js/chart-bar.js"></script> -->
+    <!-- <script src="js/chart-pie.js"></script> -->
+    <script src="js/graficos.js"></script>
+    <script src="js/admin_graficos.js"></script>
+    <!-- <script src="js/scripts.js"></script> -->
+    <!--
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables.js"></script>
         -->
-    </body>
+</body>
+
 </html>
