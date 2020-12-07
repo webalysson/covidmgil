@@ -6,9 +6,14 @@ graficos.add(ctx_descartados, options_descartados)
 graficos.add(ctx_pizza, options_pizza)
 
 const url = 'https://covidmonsenhorgil.herokuapp.com/api/'
+//const url = 'http://localhost:8000/api/'
+
+
 fetch(`${url}localidades/`).then(response => response.json()).then(data => {
   gerarTabela(data)
 })
+
+
 fetch(`${url}boletins_por_periodo/?periodo=30`).then(response => response.json()).then(data => {
   cards_numeros_totais(data)
 
@@ -20,6 +25,7 @@ fetch(`${url}boletins_por_periodo/?periodo=30`).then(response => response.json()
   graficos.update(3, [data.map(d => d.notificados), data.map(d => d.descartados)], label, true)
   graficos.update(4, gerar_pizza(data), ["Notificados", "Confirmados", "Recuperados", "Descartados"])
 })
+
 
 function filtrar_periodo(periodo) {
   $.ajax({
@@ -40,6 +46,7 @@ function filtrar_periodo(periodo) {
     }
   })
 }
+
 
 function filtrar_mes(mes) {
   $.ajax({
