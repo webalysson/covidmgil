@@ -163,7 +163,11 @@
             </div>
 
             <!-- Selecionar Período -->
-            <div class="form-group col-md-4">
+            <div class="mb-4">
+                <label>Período</label>
+                <input type="text" name="periodo" class="form-control col-lg-3 col-md-4 col-12" />
+            </div>
+            <!-- <div class="form-group col-md-4">
                 <label for="inputState">Dias</label>
                 <select id="filtro_mes" onchange="filtrar_periodo(this.value)" class="form-control">
                     <option value="30" selected>30</option>
@@ -188,7 +192,7 @@
                     <option value='11'>Novembro</option>
                     <option value='12'>Dezembro</option>
                 </select>
-            </div>
+            </div> -->
 
             <!-- Gráficos -->
             <div class="row">
@@ -269,6 +273,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="js/graficos.js"></script>
     <script src="js/admin_graficos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="./js/datepicker-config.js"></script>
     <!--
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>

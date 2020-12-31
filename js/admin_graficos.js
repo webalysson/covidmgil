@@ -47,6 +47,26 @@ function filtrar_periodo(periodo) {
   })
 }
 
+function filtrar_por_intervalo(inicio, limite) {
+  $.ajax({
+    type: 'GET',
+    contentType: "application/json; charset=utf-8",
+    url: url + "boletins_por_intervalo/",
+    data: { inicio, limite },
+    dataType: "json",
+    success: function (data) {
+      data.map(d => { d.data = date_format(d.data) })
+      const label = data.map(d => d.data);
+      graficos.clearAll()
+      graficos.update(0, [data.map(d => d.confirmados), data.map(d => d.recuperados)], label, true)
+      graficos.update(1, novos_casos(data.map(d => d.confirmados)), label)
+      graficos.update(2, novos_casos([data.map(d => d.notificados), data.map(d => d.descartados), data.map(d => d.confirmados)], true), label, true)
+      graficos.update(3, [data.map(d => d.notificados), data.map(d => d.descartados)], label, true)
+      graficos.update(4, gerar_pizza(data), ["Notificados", "Confirmados", "Recuperados", "Descartados"])
+    }
+  })
+}
+
 
 function filtrar_mes(mes) {
   $.ajax({
