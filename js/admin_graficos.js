@@ -42,7 +42,7 @@ function filtrar_periodo(periodo) {
       graficos.update(0, [data.map(d => d.confirmados), data.map(d => d.recuperados)], label, true)
       graficos.update(1, novos_casos(data.map(d => d.confirmados)), label)
       graficos.update(2, novos_casos([data.map(d => d.notificados), data.map(d => d.descartados), data.map(d => d.confirmados)], true), label, true)
-      graficos.update(3, [data.map(d => d.notificados), data.map(d => d.descartados)], label, true)
+      graficos.update(3, [data.map(d => d.media_semanal)], label, true)
       graficos.update(4, gerar_pizza(data), ["Notificados", "Confirmados", "Recuperados", "Descartados"])
     }
   })
@@ -62,7 +62,7 @@ function filtrar_por_intervalo(inicio, limite) {
       graficos.update(0, [data.map(d => d.confirmados), data.map(d => d.recuperados)], label, true)
       graficos.update(1, novos_casos(data.map(d => d.confirmados)), label)
       graficos.update(2, novos_casos([data.map(d => d.notificados), data.map(d => d.descartados), data.map(d => d.confirmados)], true), label, true)
-      graficos.update(3, [data.map(d => d.notificados), data.map(d => d.descartados)], label, true)
+      graficos.update(3, [data.map(d => d.media_semanal)], label, true)
       graficos.update(4, gerar_pizza(data), ["Notificados", "Confirmados", "Recuperados", "Descartados"])
     }
   })
@@ -83,7 +83,7 @@ function filtrar_mes(mes) {
       graficos.update(0, [data.map(d => d.confirmados), data.map(d => d.recuperados)], label, true)
       graficos.update(1, novos_casos(data.map(d => d.confirmados)), label)
       graficos.update(2, novos_casos([data.map(d => d.notificados), data.map(d => d.descartados), data.map(d => d.confirmados)], true), label, true)
-      graficos.update(3, [data.map(d => d.notificados), data.map(d => d.descartados)], label, true)
+      graficos.update(3, [data.map(d => d.media_semanal)], label, true)
       graficos.update(4, gerar_pizza(data), ["Notificados", "Confirmados", "Recuperados", "Descartados"])
     }
   })
@@ -153,8 +153,9 @@ function cards_numeros_totais(data) {
   var ultima_semana = (parseInt(ultimo_boletim["confirmados"])) - (parseInt(ultima_semana["confirmados"]));
 
   var texto_info = `Atualização: ${date_format(ultimo_boletim["data"])}
-  | ${novos_casos} novos casos em relação ao boletim anterior
+  | ${novos_casos} novos casos
   | ${ultima_semana} na última semana
+  | Média semanal: ${ultimo_boletim['media_semanal']}
   `;
 
   document.getElementById("info_atualizacao").innerHTML = texto_info;
