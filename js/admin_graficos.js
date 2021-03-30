@@ -8,8 +8,8 @@ graficos.add(ctx_novos_mes, options_novos_mes) //5
 graficos.add(ctx_media_mensal, options_media_mensal) //6
 
 
-//const url = 'https://covidmonsenhorgil.herokuapp.com/api/'
-const url = 'http://localhost:8000/api/'
+const url = 'https://covidmonsenhorgil.herokuapp.com/api/'
+//const url = 'http://localhost:8000/api/'
 
 
 fetch(`${url}localidades/`).then(response => response.json()).then(data => {
