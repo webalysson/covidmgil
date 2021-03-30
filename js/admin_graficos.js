@@ -5,8 +5,8 @@ graficos.add(ctx_diario, options_diarios)
 graficos.add(ctx_media_semanal, options_media_semanal)
 graficos.add(ctx_pizza, options_pizza)
 
-//const url = 'https://covidmonsenhorgil.herokuapp.com/api/'
-const url = 'http://localhost:8000/api/'
+const url = 'https://covidmonsenhorgil.herokuapp.com/api/'
+//const url = 'http://localhost:8000/api/'
 
 
 fetch(`${url}localidades/`).then(response => response.json()).then(data => {
@@ -14,7 +14,7 @@ fetch(`${url}localidades/`).then(response => response.json()).then(data => {
 })
 
 
-fetch(`${url}boletins_por_periodo/?periodo=500`).then(response => response.json()).then(data => {
+fetch(`${url}boletins_por_periodo/?periodo=30`).then(response => response.json()).then(data => {
   console.log(data)
   cards_numeros_totais(data)
 
