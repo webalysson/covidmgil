@@ -2,11 +2,11 @@ graficos = new Grafico()
 graficos.add(ctx_confirmados, options_confirmados)
 graficos.add(ctx_novos, options_novos)
 graficos.add(ctx_diario, options_diarios)
-graficos.add(ctx_descartados, options_descartados)
+graficos.add(ctx_media_semanal, options_media_semanal)
 graficos.add(ctx_pizza, options_pizza)
 
-const url = 'https://covidmonsenhorgil.herokuapp.com/api/'
-//const url = 'http://localhost:8000/api/'
+//const url = 'https://covidmonsenhorgil.herokuapp.com/api/'
+const url = 'http://localhost:8000/api/'
 
 
 fetch(`${url}localidades/`).then(response => response.json()).then(data => {
@@ -14,7 +14,8 @@ fetch(`${url}localidades/`).then(response => response.json()).then(data => {
 })
 
 
-fetch(`${url}boletins_por_periodo/?periodo=30`).then(response => response.json()).then(data => {
+fetch(`${url}boletins_por_periodo/?periodo=500`).then(response => response.json()).then(data => {
+  console.log(data)
   cards_numeros_totais(data)
 
   data.map(d => { d.data = date_format(d.data) })
@@ -22,7 +23,7 @@ fetch(`${url}boletins_por_periodo/?periodo=30`).then(response => response.json()
   graficos.update(0, [data.map(d => d.confirmados), data.map(d => d.recuperados)], label, true)
   graficos.update(1, novos_casos(data.map(d => d.confirmados)), label)
   graficos.update(2, novos_casos([data.map(d => d.notificados), data.map(d => d.descartados), data.map(d => d.confirmados)], true), label, true)
-  graficos.update(3, [data.map(d => d.notificados), data.map(d => d.descartados)], label, true)
+  graficos.update(3, [data.map(d => d.media_semanal)], label, true)
   graficos.update(4, gerar_pizza(data), ["Notificados", "Confirmados", "Recuperados", "Descartados"])
 })
 
@@ -158,5 +159,3 @@ function cards_numeros_totais(data) {
 
   document.getElementById("info_atualizacao").innerHTML = texto_info;
 }
-
-

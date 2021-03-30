@@ -94,6 +94,7 @@ var options_confirmados = {
     }
   }
 };
+
 var ctx_novos = document.getElementById("grafico_novos_casos").getContext('2d');
 var options_novos = {
   type: 'line',
@@ -137,6 +138,53 @@ var options_novos = {
     }
   }
 };
+
+
+var ctx_media_semanal = document.getElementById("grafico_media_semanal").getContext('2d');
+var options_media_semanal = {
+  type: 'bar',
+  data: {
+    labels: [],
+    datasets: [{
+      label: "Média Semanal",
+      lineTension: 0.3,
+      backgroundColor: "rgba(2,117,216,0.2)",
+      borderColor: "rgba(2,117,216,1)",
+      pointRadius: 5,
+      pointBackgroundColor: "rgba(2,117,216,1)",
+      pointBorderColor: "rgba(255,255,255,0.8)",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "rgba(2,117,216,1)",
+      pointHitRadius: 50,
+      pointBorderWidth: 2,
+    }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'Data'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 200
+        }
+      }],
+      yAxes: [{
+        gridLines: {
+          color: "rgba(0, 0, 0, .125)",
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
+  }
+};
+
+
 var ctx_diario = document.getElementById("grafico_barras_notificados_descartados_diario").getContext('2d');
 var options_diarios = {
   type: 'bar',
@@ -183,6 +231,8 @@ var options_diarios = {
     }
   }
 }
+
+/*
 var ctx_descartados = document.getElementById("grafico_barras_notificados_descartados").getContext('2d');
 var options_descartados = {
   type: 'bar',
@@ -224,6 +274,7 @@ var options_descartados = {
     }
   }
 };
+*/
 var ctx_pizza = document.getElementById("grafico_pizza").getContext('2d');
 var options_pizza = {
   type: 'pie',
