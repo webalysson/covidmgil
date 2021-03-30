@@ -78,7 +78,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn bg-warning btn-lg mb-4" data-toggle="modal" data-target="#modelId">
-                Bairros
+                Localidades
             </button>
 
             <ol class="breadcrumb mb-4">
@@ -229,7 +229,7 @@
                 <div class="col-xl-12">
                     <div class="card mb-4">
                         <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Média Semanal</div>
-                        <div class="card-body"><canvas id="grafico_media_semanal" height="10" width="100%"></canvas></div>
+                        <div class="card-body"><canvas id="grafico_media_semanal" height="20" width="100%"></canvas></div>
                         <div class="card-footer small text-muted">Novos casos diários</div>
                     </div>
                 </div>
@@ -241,11 +241,30 @@
                         <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Notificados, Descartados e
                             Confirmados por dia</div>
                         <div class="card-body"><canvas id="grafico_barras_notificados_descartados_diario" width="100%"
-                                height="14"></canvas></div>
+                                height="25"></canvas></div>
                         <div class="card-footer small text-muted">Dados diários</div>
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="card mb-4">
+                        <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Novos casos por mês</div>
+                        <div class="card-body"><canvas id="grafico_novos_mes" width="100%"
+                                height="40"></canvas></div>
+                        <div class="card-footer small text-muted">Evolução mensal</div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="card mb-4">
+                        <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Média Mensal</div>
+                        <div class="card-body"><canvas id="grafico_media_mensal" width="100%"
+                                height="40"></canvas></div>
+                        <div class="card-footer small text-muted">Dados mensais</div>
+                    </div>
+                </div>                
+            </div>            
             
             <!--
             <div class="row">

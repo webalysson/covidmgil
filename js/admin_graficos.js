@@ -1,12 +1,15 @@
 graficos = new Grafico()
-graficos.add(ctx_confirmados, options_confirmados)
-graficos.add(ctx_novos, options_novos)
-graficos.add(ctx_diario, options_diarios)
-graficos.add(ctx_media_semanal, options_media_semanal)
-graficos.add(ctx_pizza, options_pizza)
+graficos.add(ctx_confirmados, options_confirmados) //0
+graficos.add(ctx_novos, options_novos) //1
+graficos.add(ctx_diario, options_diarios) //2
+graficos.add(ctx_media_semanal, options_media_semanal) //3
+graficos.add(ctx_pizza, options_pizza) //4
+graficos.add(ctx_novos_mes, options_novos_mes) //5
+graficos.add(ctx_media_mensal, options_media_mensal) //6
 
-const url = 'https://covidmonsenhorgil.herokuapp.com/api/'
-//const url = 'http://localhost:8000/api/'
+
+//const url = 'https://covidmonsenhorgil.herokuapp.com/api/'
+const url = 'http://localhost:8000/api/'
 
 
 fetch(`${url}localidades/`).then(response => response.json()).then(data => {
@@ -15,7 +18,7 @@ fetch(`${url}localidades/`).then(response => response.json()).then(data => {
 
 
 fetch(`${url}boletins_por_periodo/?periodo=30`).then(response => response.json()).then(data => {
-  console.log(data)
+  //console.log(data)
   cards_numeros_totais(data)
 
   data.map(d => { d.data = date_format(d.data) })
@@ -25,6 +28,13 @@ fetch(`${url}boletins_por_periodo/?periodo=30`).then(response => response.json()
   graficos.update(2, novos_casos([data.map(d => d.notificados), data.map(d => d.descartados), data.map(d => d.confirmados)], true), label, true)
   graficos.update(3, [data.map(d => d.media_semanal)], label, true)
   graficos.update(4, gerar_pizza(data), ["Notificados", "Confirmados", "Recuperados", "Descartados"])
+})
+
+
+fetch(`${url}quantitativo_mensal/`).then(response => response.json()).then(data => {
+  let label = data.map(d => d.mes);
+  graficos.update(5, [data.map(d => d.casos_mes)], label, true)
+  graficos.update(6, [data.map(d => d.media_mes)], label, true)
 })
 
 
@@ -106,6 +116,8 @@ function gerar_pizza(array) {
 
 function novos_casos(array, multiple = false) {
   let data = [];
+  let valor = 0;
+  let dado = 0
   if (!multiple) {
     data.push(0);
     for (let i = 0; i <= array.length; i++) {
@@ -116,10 +128,25 @@ function novos_casos(array, multiple = false) {
       let label = [];
       label.push(0)
       for (let j = 0; j <= array[i].length; j++) {
-        label.push(array[i][j + 1] - array[i][j])
+        valor = array[i][j + 1] - array[i][j]
+        dado = valor > 0 ? valor : 0
+        label.push(dado)
       }
       data.push(label)
     }
+  }
+  return data
+}
+
+function dados_mensais(array) {
+  let data = [];
+  for (let i = 0; i < array.length; i++) {
+    let label = [];
+    label.push(0)
+    for (let j = 0; j <= array[i].length; j++) {
+      label.push(array[i][j+1])
+    }
+    data.push(label)
   }
   return data
 }

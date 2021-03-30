@@ -232,6 +232,94 @@ var options_diarios = {
   }
 }
 
+
+var ctx_media_mensal = document.getElementById("grafico_media_mensal").getContext('2d');
+var options_media_mensal = {
+  type: 'bar',
+  data: {
+    labels: [],
+    datasets: [{
+      label: "Média no mês",
+      backgroundColor: "rgba(2,117,216,1)",
+      borderColor: "rgba(2,117,216,1)",
+    },
+    ],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'Data'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 50
+        }
+      }],
+      yAxes: [{
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: true
+    }
+  }
+}
+
+
+var ctx_novos_mes = document.getElementById("grafico_novos_mes").getContext('2d');
+var options_novos_mes = {
+  type: 'bar',
+  data: {
+    labels: [],
+    datasets: [{
+      label: "Novos casos no mês",
+      backgroundColor: "rgba(2,117,216,1)",
+      borderColor: "rgba(2,117,216,1)",
+    },
+    /*
+    {
+      label: "Descartados",
+      backgroundColor: "green",
+      borderColor: "rgba(11,156,49,1)",
+    },
+    {
+      label: "Confirmados",
+      backgroundColor: "rgba(244, 255, 87, 1)",
+      borderColor: "rgba(11,156,49,1)",
+    },*/
+    ],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'Data'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 50
+        }
+      }],
+      yAxes: [{
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: true
+    }
+  }
+}
+
+
 /*
 var ctx_descartados = document.getElementById("grafico_barras_notificados_descartados").getContext('2d');
 var options_descartados = {
