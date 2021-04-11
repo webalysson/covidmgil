@@ -2,15 +2,17 @@ $(document).ready(function () {
   $.ajax({
     url: "https://covidmonsenhorgil.herokuapp.com/api/vacinacao/",
     success: function (response) {
+      /*
       const primeiraDose = response
         .map((value) => value.primeira_dose)
         .reduce((prev, curr) => prev + curr, 0);
       const segundaDose = response
         .map((value) => value.segunda_dose)
         .reduce((prev, curr) => prev + curr, 0);
+      */
 
-      $(".vacinados_primeira").append(JSON.stringify(primeiraDose));
-      $(".vacinados_segunda").append(JSON.stringify(segundaDose));
+      //$(".vacinados_primeira").append(JSON.stringify(primeiraDose));
+      //$(".vacinados_segunda").append(JSON.stringify(segundaDose));
 
       $("#tabela-vacinados").DataTable({
         searching: false,
