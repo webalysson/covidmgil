@@ -30,7 +30,9 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
         crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
         crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QF29Y3FWT8"></script>
     <script type="text/javascript">
@@ -94,6 +96,37 @@
             <button type="button" class="btn bg-warning btn-lg mb-4" data-toggle="modal" data-target="#modelId">
                 Bairros
             </button>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg mb-4" data-toggle="modal" data-target="#modelId2">
+                Vacinados
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="modelId2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title">Detalhe de Vacinados</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                  </button>
+                          </div>
+     
+                          <table width='80%' id='tabela-vacinados' class="table table-striped table-light">
+                              <thead class="thead-black">
+                                  <th>Grupo</th>
+                                  <th>1ª dose</th>
+                                  <th>2ª dose</th>
+                              </thead>
+                          </table>
+                          
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
             <!-- Modal -->
             <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
@@ -179,6 +212,24 @@
                     </div>
                 </div>
 
+                <div class="col-xl-2 col-md-6">
+                    <div class="card bg-info mb-4 text-white">
+                        <div class="card-body">Vacinados 1ª dose</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="vacinados_primeira"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-2 col-md-6">
+                    <div class="card bg-info mb-4 text-white">
+                        <div class="card-body">Vacinados 2ª dose</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="vacinados_segunda"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Selecionar Período -->
@@ -186,32 +237,6 @@
                 <label>Período</label>
                 <input type="text" name="periodo" class="form-control col-lg-3 col-md-4 col-12" />
             </div>
-            <!-- <div class="form-group col-md-4">
-                <label for="inputState">Dias</label>
-                <select id="filtro_mes" onchange="filtrar_periodo(this.value)" class="form-control">
-                    <option value="30" selected>30</option>
-                    <option value="60">60</option>
-                    <option value="90">90</option>
-                    <option value="120">120</option>
-                    <option value="">Todos</option>
-                </select>
-            </div>
-
-            <div class="form-group col-md-4">
-                <label for="inputState">Mês</label>
-                <select id="filtro_mes" onchange="filtrar_mes(this.value)" class="form-control">
-                    <option value="">Todos</option>
-                    <option value="04">Abril</option>
-                    <option value="05">Maio</option>
-                    <option value="06">Junho</option>
-                    <option value="07">Julho</option>
-                    <option value="08">Agosto</option>
-                    <option value="09">Setembro</option>
-                    <option value="10">Outubro</option>
-                    <option value='11'>Novembro</option>
-                    <option value='12'>Dezembro</option>
-                </select>
-            </div> -->
 
             <!-- Gráficos -->
             <div class="row">
@@ -322,6 +347,8 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script src='./js/datatable-config.js'></script>
     <script src="./js/datepicker-config.js"></script>
     <!--
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
