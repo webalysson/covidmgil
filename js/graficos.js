@@ -456,7 +456,8 @@ var options_descartados = {
 
 var ctx_pizza = document.getElementById("grafico_pizza").getContext("2d");
 var options_pizza = {
-  type: "pie",
+  type: "doughnut",
+  responsive: true,
   data: {
     datasets: [
       {
@@ -464,7 +465,8 @@ var options_pizza = {
         //backgroundColor: ["#ffc107", "#28a745", "#007bff"],
       },
     ],
-  },
+  }
+  
 };
 
 /* ---------------------------------------------------------------
