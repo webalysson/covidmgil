@@ -48,10 +48,9 @@ fetch(`${url}boletins_por_periodo/?periodo=30`)
     );
     graficos.update(3, [data.map((d) => d.media_semanal)], label, true);
     graficos.update(4, gerar_pizza(data), [
-      "Notificados",
+      "Óbitos",
       "Confirmados",
       "Recuperados",
-      "Descartados",
     ]);
   });
 
@@ -98,10 +97,9 @@ function filtrar_periodo(periodo) {
       );
       graficos.update(3, [data.map((d) => d.media_semanal)], label, true);
       graficos.update(4, gerar_pizza(data), [
-        "Notificados",
+        "Óbitos",
         "Confirmados",
         "Recuperados",
-        "Descartados",
       ]);
     },
   });
@@ -142,10 +140,9 @@ function filtrar_por_intervalo(inicio, limite) {
       );
       graficos.update(3, [data.map((d) => d.media_semanal)], label, true);
       graficos.update(4, gerar_pizza(data), [
-        "Notificados",
+        "Obitos",
         "Confirmados",
         "Recuperados",
-        "Descartados",
       ]);
     },
   });
@@ -202,10 +199,9 @@ function filtrar_mes(mes) {
 
 function gerar_pizza(array) {
   let data = [
-    array[array.length - 1].notificados,
+    array[array.length - 1].obitos,
     array[array.length - 1].confirmados,
     array[array.length - 1].recuperados,
-    array[array.length - 1].descartados,
   ];
   return data;
 }

@@ -460,7 +460,8 @@ var options_pizza = {
   data: {
     datasets: [
       {
-        backgroundColor: ["#6c757d", "#ffc107", "#28a745", "#007bff"],
+        backgroundColor: ["red", "yellow", "green"],
+        //backgroundColor: ["#ffc107", "#28a745", "#007bff"],
       },
     ],
   },
